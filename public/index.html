@@ -1,0 +1,81 @@
+<html lang="es">
+    <head>
+        <meta charset="utf-8" /> 
+        <title>Almacenar Node Mysql</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+       
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+
+    </head>
+
+    <body>
+
+        <input type="hidden" id="hfId" value="" />
+
+        <div class="container">
+            <h2>Mantenimiento de Libros</h2>
+
+            <div class="row">
+                <div class="col-lg-4" style="margin-top:10px">
+                    <label for="txtNobre">Nombre</label>
+                    <input id="txtNobre" class="form-control" name="txtNobre" type="text" />
+                </div>
+                <div class="col-lg-4" style="margin-top:10px">
+                    <label for="txtAutor">Autor</label>
+                    <input id="txtAutor" class="form-control" name="txtAutor" type="text" />
+                </div>
+                <div class="box-body col-lg-2" style="margin-top:35px">
+                    <button id="btnLimpiar" type="button" class="btn btn-info btn-block btn-flat">Limpiar</button>
+                </div>
+                <div class="box-body col-lg-2" style="margin-top:35px;">
+                    <button id="btnAlmacenar" type="button" class="btn btn-danger btn-block btn-flat">Almacenar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="divTabla" style="margin-top:20px; display:block">
+            <table id="tbDetalles" class="table table-striped table-hover" style="width: 100% !important;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Autor</th>
+                        <th>Fecha</th>
+                        <th>Editar</th>
+                        <th>Eliminar </th>
+                    </tr>
+                </thead>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog" style="z-index:6000">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Error</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p><span id="spTexto"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </body>
+
+</html>
